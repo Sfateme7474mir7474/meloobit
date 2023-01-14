@@ -1,0 +1,40 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 55%;
+    color: #000;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    color: #00b1f6;
+}
+
+header div a {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+header img {
+    width: 50px;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+    border-radius: 10px;
+}
+
+header nav a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all .3s ease;
+}
+
+header  nav a:hover {
+    color: #00b1f6;
+}
