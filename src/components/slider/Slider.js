@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Link } from "react-router-dom";
 import { Autoplay } from "swiper";
 import "./slider.css";
 import Slide from "./Slide";
@@ -21,9 +22,9 @@ const Slider = () => {
         modules={[Autoplay]}
         className="mySwiper"
       >
-        {data.map((item) => (
+        {data.map((item,index) => (
           <SwiperSlide key={item.id}>
-            <Slide image={item.image.slider} />
+            <Link target="_blank" to={`last-detail/${index + 1}`}><Slide image={item.image.slider} /></Link> 
           </SwiperSlide>
         ))}
       </Swiper>

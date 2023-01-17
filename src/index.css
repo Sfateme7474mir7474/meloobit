@@ -13,11 +13,12 @@ img {
 }
 
 body {
-	background: #132257;
+	background: #4260cc;
 }
 
 h1,h2,h3,h4,h5,h6,a,span,p {
 	color: #fff;
+	text-align: center;
 }
 
 section {

@@ -29,3 +29,8 @@
   object-fit: contain;
   border-radius: 18px;
 }
+
+.swiper-slide a {
+  display: block;
+  width: 100%;
+}
