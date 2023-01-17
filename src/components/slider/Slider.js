@@ -9,7 +9,6 @@ import { fetchApi } from "../../services/api";
 const Slider = () => {
   const [data, setData] = useState([]);
   const sliderUrl = "v1/song/slider/latest";
-  console.log(data);
 
   useEffect(() => {
     fetchApi(sliderUrl).then((response) => setData(response.results));
