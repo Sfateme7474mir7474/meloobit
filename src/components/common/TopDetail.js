@@ -7,15 +7,20 @@ import "./detail.css";
 const TopDetail = () => {
   const topDayUrl = "v1/song/top/day/0/100";
   const topWeekUrl = "v1/song/top/week/0/100";
-  
+
   const { id } = useParams();
-  const [data, setData] = useState([]);
-  const detail = id > 7 ?  data[id - 10] : data[id - 1];
+  const [dataDay, setDataDay] = useState([]);
+  const [dataWeek, setDataWeek] = useState([]);
+  const detail = id.includes("w")
+    ? dataWeek[id.slice(0, id.length - 1) - 1]
+    : dataDay[id - 1];
   console.log(detail?.id);
   console.log(detail);
-  
+
   useEffect(() => {
-    fetchApi(id >7 ? topWeekUrl : topDayUrl).then((res) => setData(res.results));
+    fetchApi(id.includes("w") ? topWeekUrl : topDayUrl).then((res) =>
+      id.includes("w") ? setDataWeek(res.results) : setDataDay(res.results)
+    );
   }, [id]);
 
   return (

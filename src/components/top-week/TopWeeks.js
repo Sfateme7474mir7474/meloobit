@@ -15,7 +15,7 @@ const TopWeeks = () => {
         <h1>Top 10 Week Song</h1>
         <div className="all">
           {data.map((item, index) => (
-            <Link target="_blank" to={`/music/${index + 10}`} key={index}>
+            <Link target="_blank" to={`/music/${index +1}w`} key={index}>
               <TopWeek
                 title={item.title}
                 image={item.image.cover.url}
