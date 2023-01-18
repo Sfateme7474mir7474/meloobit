@@ -16,8 +16,8 @@ const LastSongs = () => {
     <section className="all-last-songs">
       <h1>Last Songs</h1>
       <div className="all">
-        {data.map((item) => (
-          <Link key={item.id}>
+        {data.map((item,index) => (
+          <Link to={`last-detail/${index + 10}`} key={item.id}>
             <LastSong
               title={item.title}
               image={item.image.cover.url}

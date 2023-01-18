@@ -6,22 +6,23 @@ import "./lastdetail.css";
 
 const LastDetail = () => {
   const sliderUrl = "v1/song/slider/latest";
+  const songUrl = "v1/song/new/0/11";
+  
   const { id } = useParams();
   const [data, setData] = useState([]);
-  const detail = data[id - 1];
-  //   const {duration} = detail;
+  const detail = id > 7 ?  data[id - 10] : data[id - 1];
   console.log(detail?.id);
   console.log(detail);
   //
   useEffect(() => {
-    fetchApi(sliderUrl).then((res) => setData(res.results));
-  }, []);
+    fetchApi(id >7 ? songUrl : sliderUrl).then((res) => setData(res.results));
+  }, [id]);
 
   return (
     <section className="last-detail">
       <div
         className="background"
-        style={{ backgroundImage: `url(${detail?.image.slider.url})` }}
+        style={{ backgroundImage: `url(${detail?.image.cover.url})` }}
       ></div>
       <div className="last-detail-content">
         <div>
