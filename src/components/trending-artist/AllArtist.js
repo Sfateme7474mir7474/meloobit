@@ -13,10 +13,10 @@ const AllArtist = () => {
 
   return (
     <section className="all-artist">
-    <h1>trending artists</h1>
+    <h1>Trending Artists</h1>
       <div className="all">
         {data.map((item) => (
-          <Artist name={item.fullName} image={item.image.cover.url} />
+          <Artist key={item.id} name={item.fullName} image={item.image.cover.url} />
         ))}
       </div>
     </section>
