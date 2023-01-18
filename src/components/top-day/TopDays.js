@@ -1,24 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { fetchApi } from "../../services/api";
-import LastSong from "./LastSong";
 import { Link } from "react-router-dom";
-import "./last-song.css";
+import TopDay from "./TopDay";
+import "./top-day.css";
 
-const LastSongs = () => {
-  const songUrl = "v1/song/new/0/11";
+const TopDays = () => {
+  const topDayUrl = "v1/song/top/day/0/100";
   const [data, setData] = useState([]);
   console.log(data);
-
   useEffect(() => {
-    fetchApi(songUrl).then((res) => setData(res.results));
+    fetchApi(topDayUrl).then((res) => setData(res.results));
   }, []);
   return (
-    <section className="all-last-songs">
-      <h1>Last Songs</h1>
+    <section className="tops">
+      <h1>Top 10 Day Song</h1>
       <div className="all">
-        {data.map((item,index) => (
-          <Link target="_blank" to={`last-detail/${index + 10}`} key={item.id}>
-            <LastSong
+        {data.map((item, index) => (
+          <Link target="_blank" to={`/music/${index + 1}`} key={index}>
+            <TopDay
               title={item.title}
               image={item.image.cover.url}
               artist={item.artists[0].fullName}
@@ -31,4 +30,4 @@ const LastSongs = () => {
   );
 };
 
-export default LastSongs;
+export default TopDays;

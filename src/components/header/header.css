@@ -18,6 +18,7 @@ header div {
 header div a {
     font-weight: bold;
     font-size: 1.5rem;
+    color: #000;
 }
 
 header img {
@@ -33,6 +34,7 @@ header nav {
 
 header nav a {
     font-size: 1.1rem;
+    color: #000;
     font-weight: 500;
     transition: all .3s ease;
 }

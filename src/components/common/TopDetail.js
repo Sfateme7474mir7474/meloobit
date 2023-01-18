@@ -4,18 +4,18 @@ import { fetchApi } from "../../services/api";
 import ReactPlayer from "react-player";
 import "./detail.css";
 
-const LastDetail = () => {
-  const sliderUrl = "v1/song/slider/latest";
-  const songUrl = "v1/song/new/0/11";
+const TopDetail = () => {
+  const topDayUrl = "v1/song/top/day/0/100";
+  const topWeekUrl = "v1/song/top/week/0/100";
   
   const { id } = useParams();
   const [data, setData] = useState([]);
   const detail = id > 7 ?  data[id - 10] : data[id - 1];
   console.log(detail?.id);
   console.log(detail);
-  //
+  
   useEffect(() => {
-    fetchApi(id >7 ? songUrl : sliderUrl).then((res) => setData(res.results));
+    fetchApi(id >7 ? topWeekUrl : topDayUrl).then((res) => setData(res.results));
   }, [id]);
 
   return (
@@ -54,4 +54,4 @@ const LastDetail = () => {
   );
 };
 
-export default LastDetail;
+export default TopDetail;
